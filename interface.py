@@ -1,8 +1,9 @@
-import PySimpleGUI as sg
+import PySimpleGUI as sg #necessario instalar a biblioteca 
 from cadastro import *
 
 
 def login():
+    """Função que define o estilo da janela de login"""
     estilo = [
         [sg.Text('Nome:', size=5), sg.Input(key='nome', size=15)],
         [sg.Text('Senha:', size=5), sg.Input(key='senha', size=15)],
@@ -16,7 +17,9 @@ def login():
 janela1 = login()
 
 
-while True:
+while True: 
+    """looping responsável por deixar a janela sempre rodando.
+    Todas os eventos que acontecem na interface são lidos por conta do looping"""
     window, event, values = sg.read_all_windows()
 
     if window == janela1 and event == sg.WIN_CLOSED:
